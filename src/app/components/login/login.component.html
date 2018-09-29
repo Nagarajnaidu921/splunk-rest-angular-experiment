@@ -1,0 +1,32 @@
+<section fxLayout="row" fxLayoutAlign="center center" style="margin-top: 50px;">
+  <mat-card fxLayout="column" fxFlex="100%" fxFlex.gt-xs="50%" fxFlex.gt-sm="30%">
+    <mat-card-title fxLayout="row">
+      <h3>Login</h3>
+    </mat-card-title>
+
+    <mat-card-content>
+
+      <form fxLayout="column" name="LoginForm" #loginForm="ngForm">
+        <div class="input-row" fxLayout="column" fxLayoutGap="20px">
+          <mat-form-field fxFlex>
+            <input matInput email placeholder="Email" type="email" name="email" ngModel required>
+            <mat-error>
+              Enter valid email ID
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex>
+            <input matInput placeholder="Password" type="password" name="password" ngModel required minlength="6">
+            <mat-error>
+              Minimum password length should be 6
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" [ngClass]="{'form-btn': !loginForm.invalid}" [disabled]="loginForm.pristine || loginForm.invalid">Login</button>
+        </div>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+</section>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { sidenavMenuItems, SideNavItem } from './side-nav-menuitems';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'splunk-rest-ngClient';
+  sideNavMenuItems: SideNavItem[];
+
+  constructor() {
+    this.sideNavMenuItems = sidenavMenuItems;
+  }
 }

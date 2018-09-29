@@ -1,0 +1,8 @@
+.mat-raised-button[disabled] {
+    background: rgba(0,0,0,.12);
+}
+
+.form-btn.mat-primary { 
+    background: var(--vert-gradient-primary-fallback);
+    background: var(--vert-gradient-primary) !important;
+}
