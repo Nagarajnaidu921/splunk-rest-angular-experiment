@@ -6,10 +6,10 @@
 
     <mat-card-content>
 
-      <form fxLayout="column" name="LoginForm" #loginForm="ngForm">
+      <form fxLayout="column" name="LoginForm" #loginForm="ngForm" (ngSubmit)="handleSubmit(loginForm)">
         <div class="input-row" fxLayout="column" fxLayoutGap="20px">
           <mat-form-field fxFlex>
-            <input matInput email placeholder="Email" type="email" name="email" ngModel required>
+            <input matInput placeholder="Username" type="text" name="username" ngModel required>
             <mat-error>
               Enter valid email ID
             </mat-error>

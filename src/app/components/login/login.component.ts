@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { UserAuthService } from '../../services/auth/user-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +8,16 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
-  email = new FormControl('', [Validators.required, Validators.email]);
+  constructor(
+    private userAuthServ: UserAuthService
+  ) { }
+
   ngOnInit() {
   }
 
+  handleSubmit(form) {
+    const inputData = Object.assign({}, form.form.value);
+    console.log(inputData);
+    this.userAuthServ.login(inputData);
+  }
 }
