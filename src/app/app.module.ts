@@ -9,16 +9,22 @@ import { MatComponentsModule } from './mat-components/mat-components.module';
 import { NavbarTopComponent } from './components/navbar-top/navbar-top.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,  HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { AuthInterceptorService } from './services/auth-interceptor/auth-interceptor.service';
+import { EditFormComponent } from './components/edit-form/edit-form.component';
+import { FooterComponent } from './components/footer/footer.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarTopComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    EditFormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -26,10 +32,20 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatComponentsModule,
     FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
+  entryComponents: [
+    EditFormComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,7 +9,10 @@ import {
   MatSidenavModule,
   MatListModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatTableModule,
+  MatSelectModule,
+  MatDialogModule
 } from '@angular/material';
 
 const matComponents = [
@@ -20,7 +23,10 @@ const matComponents = [
   MatSidenavModule,
   MatListModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatTableModule,
+  MatSelectModule,
+  MatDialogModule
 ];
 
 

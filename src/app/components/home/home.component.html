@@ -1,10 +1,78 @@
-<p>
-  home works!
-</p>
-<p>
-  home works!
-</p><p>
-  home works!
-</p><p>
-  home works!
-</p>
+<div fxLayout="column">
+    <section fxLayout="row" fxLayoutAlign="center center" style="margin-top: 50px;">
+        <mat-card fxLayout="column" fxFlex="90%">
+          <mat-card-title fxLayout="row">
+            <h3>Filter</h3>
+          </mat-card-title>
+      
+          <mat-card-content>
+      
+            <form fxLayout="row" name="myForm" #myForm="ngForm" fxLayoutGap="20px">
+             
+                <mat-form-field fxFlex>
+                  <mat-select placeholder="user" name="user" (ngModelChange)="getAllApps($event)" ngModel>
+                    <mat-option *ngFor="let user of usersList" [value]="user" >
+                      {{user}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+            
+                <mat-form-field fxFlex>
+                  <mat-select placeholder="apps" name="app"  (ngModelChange)="getAllConfs($event)" ngModel>
+                    <mat-option *ngFor="let app of appList" [value]="app">
+                    {{app}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+      
+                <mat-form-field fxFlex>
+                  <mat-select placeholder="confs" name="conf" (ngModelChange)="getAllStanzas($event)"  ngModel>
+                    <mat-option *ngFor="let conf of confList" [value]="conf">
+                    {{conf}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+      
+                <mat-form-field fxFlex>
+                  <mat-select placeholder="stanza" name="stanza" (ngModelChange)="getStanzaContent($event)" ngModel>
+                    <mat-option *ngFor="let stanza of stanzaList" [value]="stanza">
+                    {{stanza}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </form>
+            
+      
+          </mat-card-content>
+        </mat-card>
+      </section>
+      <section fxLayout="row" fxLayoutAlign="center center" style="margin-top: 50px;">
+          <mat-card fxLayout="column" fxFlex="90%">
+            <mat-card-title fxLayout="row">
+              <h3>Stanza</h3>
+            </mat-card-title>
+            <mat-card-content fxLayout="column"> 
+              <div *ngFor="let kyeValue of stanzaContent" fxLayout="row">
+                <div fxFlex="50">
+                    {{kyeValue.key}} 
+                </div>
+                <div fxFlex="50">
+                    : {{kyeValue.value}}
+                </div>
+              </div>
+            </mat-card-content>
+            </mat-card>
+        </section>
+       
+</div>
+
+<div class="floating-btn-bottom" style="text-align:right" *ngIf="selectedStanza.length > 0">
+  <button mat-fab class="edit" (click)="openDilag()">
+    <mat-icon>edit</mat-icon>
+  </button>
+</div>
+
+
+
+
+

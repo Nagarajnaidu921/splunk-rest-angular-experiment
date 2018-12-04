@@ -37,14 +37,6 @@ export const sidenavMenuItems: SideNavItem[] = [
             },
         ]
     },
-    {
-        path: '/login',
-        text: 'Login',
-        icon: 'verified_user',
-    },
-    {
-        path: '/account/signup',
-        text: 'Register',
-        icon: 'verified_user',
-    },
+   
+   
 ];

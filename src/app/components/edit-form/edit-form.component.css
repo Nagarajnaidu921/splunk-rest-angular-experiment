@@ -1,0 +1,16 @@
+.form {
+    overflow: hidden;
+}
+
+.update { 
+    background: var(--vert-gradient-primary-fallback);
+    background: var(--vert-gradient-primary) !important;
+}
+
+.update-title {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--vert-gradient-primary-fallback);
+    background: var(--vert-gradient-primary) !important;
+}

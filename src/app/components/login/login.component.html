@@ -6,7 +6,7 @@
 
     <mat-card-content>
 
-      <form fxLayout="column" name="LoginForm" #loginForm="ngForm" (ngSubmit)="handleSubmit(loginForm)">
+      <form fxLayout="column" name="LoginForm" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <div class="input-row" fxLayout="column" fxLayoutGap="20px">
           <mat-form-field fxFlex>
             <input matInput placeholder="Username" type="text" name="username" ngModel required>

@@ -1,0 +1,11 @@
+.floating-btn-bottom {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    
+}
+
+.edit {
+    background: var(--vert-gradient-primary-fallback);
+    background: var(--vert-gradient-primary) !important;
+}

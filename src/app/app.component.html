@@ -4,8 +4,8 @@
       <div>
         <img class="user-avatar" src="../assets/user-avatar.svg">
       </div>
-      <mat-nav-list>
-        <ng-container *ngFor="let navItem of sideNavMenuItems">
+      <mat-nav-list *ngIf="isLoggedIn">
+        <ng-container *ngFor="let navItem of sideNavMenuItems" >
           <a *ngIf="navItem.path" mat-list-item [routerLink]="[navItem.path]" routerLinkActive="sidenav-active-nav-list-item">
             <mat-icon>{{navItem.icon}}</mat-icon>{{navItem.text}}
           </a>
@@ -14,8 +14,23 @@
           </a>
         </ng-container>
       </mat-nav-list>
+      <mat-nav-list *ngIf="isLoggedIn">
+        <ng-container >
+          <a  mat-list-item (click)="logout()">
+            <mat-icon>verified_user</mat-icon>Logout
+          </a>
+        </ng-container>
+      </mat-nav-list>
+      <mat-nav-list *ngIf="!isLoggedIn">
+        <ng-container>
+          <a mat-list-item routerLink="/login" routerLinkActive="sidenav-active-nav-list-item">
+            <mat-icon>verified_user</mat-icon>Login
+          </a>
+        </ng-container>
+      </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
+<app-footer></app-footer>

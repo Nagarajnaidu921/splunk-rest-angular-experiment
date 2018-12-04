@@ -15,9 +15,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleSubmit(form) {
+  login(form) {
     const inputData = Object.assign({}, form.form.value);
-    console.log(inputData);
+    // console.log(inputData);
     this.userAuthServ.login(inputData);
   }
 }
