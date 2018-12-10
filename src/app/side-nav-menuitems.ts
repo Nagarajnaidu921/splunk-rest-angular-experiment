@@ -22,21 +22,25 @@ export const sidenavMenuItems: SideNavItem[] = [
         icon: 'account_circle',
     },
     {
-        text: 'Categories',
-        icon: 'category',
-        submenuItems: [
-            {
-                path: '/categories',
-                text: 'List',
-                icon: 'list',
-            },
-            {
-                path: '/categories/new',
-                text: 'Create',
-                icon: 'list',
-            },
-        ]
-    },
-   
+        path: '/splunkapps',
+        text: 'Manage apps',
+        icon: 'settings_applications'
+    }
+    // {
+    //     text: 'Categories',
+    //     icon: 'category',
+    //     submenuItems: [
+    //         {
+    //             path: '/categories',
+    //             text: 'List',
+    //             icon: 'list',
+    //         },
+    //         {
+    //             path: '/categories/new',
+    //             text: 'Create',
+    //             icon: 'list',
+    //         },
+    //     ]
+    // },
    
 ];

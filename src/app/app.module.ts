@@ -15,7 +15,8 @@ import { HttpClientModule,  HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AuthInterceptorService } from './services/auth-interceptor/auth-interceptor.service';
 import { EditFormComponent } from './components/edit-form/edit-form.component';
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { ManageSplunkAppsComponent } from './components/manage-splunk-apps/manage-splunk-apps.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './components/footer/footer.component'
     HomeComponent,
     LoginComponent,
     EditFormComponent,
-    FooterComponent
+    FooterComponent,
+    ManageSplunkAppsComponent
   ],
   imports: [
     BrowserModule,
